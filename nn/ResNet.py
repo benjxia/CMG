@@ -92,7 +92,7 @@ class Decoder(nn.Module):
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         logit = self.fc1(x)
         logit = F.relu(logit)
-        logit = logit.reshape(out.size()[0], self.latent_channels, 6, 278)
+        logit = logit.reshape(logit.size()[0], self.latent_channels, 6, 278)
         logit = self.conv1(logit)
         logit = F.relu(logit)
         for resblock in self.conv2:
