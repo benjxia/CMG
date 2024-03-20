@@ -107,9 +107,6 @@ class Decoder(nn.Module):
         logit = self.conv0(logit)
         return logit
 
-encoder = Encoder()
-decoder = Decoder()
-
 class AudioVAE(nn.Module):
     def __init__(self, latent_channels=10, input_size=(2, 128, 400)):
         super(AudioVAE, self).__init__()
